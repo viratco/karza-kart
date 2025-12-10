@@ -1,0 +1,111 @@
+/* Services Section Container */
+.services-section {
+    padding: 4rem 8rem;
+    background-color: #f9f9f9;
+}
+
+/* White Box Container */
+.services-container {
+    background-color: #ffffff;
+    border-radius: 24px;
+    padding: 4rem 5rem;
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.06);
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* Section Header */
+.services-header {
+    text-align: center;
+    margin-bottom: 3.5rem;
+}
+
+.services-title {
+    font-size: 2.5rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.services-description {
+    font-size: 1.05rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 700px;
+    margin: 0 auto;
+}
+
+/* Service Cards Grid */
+.services-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 3rem;
+    margin-bottom: 3rem;
+}
+
+/* Individual Service Card */
+.service-card {
+    text-align: center;
+}
+
+.service-icon-wrapper {
+    width: 80px;
+    height: 80px;
+    margin: 0 auto 1.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.service-card-title {
+    font-size: 1.35rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+}
+
+.service-card-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    max-width: 280px;
+    margin: 0 auto;
+}
+
+/* Service Details Button */
+.services-button-wrapper {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.service-details-btn {
+    background-color: #3b3f51;
+    color: white;
+    border: none;
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-size: 1rem;
+    font-weight: 500;
+    cursor: pointer;
+    transition: background-color 0.2s;
+}
+
+.service-details-btn:hover {
+    background-color: #2c2f3e;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .services-section {
+        padding: 3rem 2rem;
+    }
+
+    .services-container {
+        padding: 3rem 2rem;
+    }
+
+    .services-grid {
+        grid-template-columns: 1fr;
+        gap: 2.5rem;
+    }
+}

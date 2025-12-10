@@ -1,0 +1,135 @@
+/* News Section Container */
+.news-section {
+    padding-top: 4rem;
+    /* Reduced padding since it's nested */
+    /* background-color: #f9f9f9; Removed to blend with parent or kept if distinct? Let's keep transparent/white if nested */
+    width: 100%;
+}
+
+/* Section Header */
+.news-header {
+    text-align: center;
+    margin-bottom: 4rem;
+}
+
+.news-title {
+    font-size: 3rem;
+    font-weight: 800;
+    color: #1a1a1a;
+    letter-spacing: -1px;
+}
+
+/* News Grid */
+.news-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+}
+
+/* News Card */
+.news-card {
+    background-color: #ffffff;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+    transition: transform 0.2s ease, box-shadow 0.2s ease;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 12px 24px rgba(0, 0, 0, 0.1);
+}
+
+.news-image-container {
+    height: 240px;
+    overflow: hidden;
+}
+
+.news-image {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s ease;
+}
+
+.news-card:hover .news-image {
+    transform: scale(1.05);
+}
+
+.news-content {
+    padding: 2rem;
+    flex: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.news-card-title {
+    font-size: 1.25rem;
+    font-weight: 700;
+    color: #1a1a1a;
+    margin-bottom: 1rem;
+    line-height: 1.4;
+}
+
+.news-card-description {
+    font-size: 0.95rem;
+    color: #666;
+    line-height: 1.6;
+    margin-bottom: 2rem;
+    flex: 1;
+    /* Push footer to bottom */
+}
+
+/* Card Footer */
+.news-footer {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    border-top: 1px solid #f0f0f0;
+    padding-top: 1.5rem;
+    margin-top: auto;
+}
+
+.learn-more-link {
+    color: #ff7f6e;
+    /* Salmon/Coral accent */
+    font-weight: 600;
+    font-size: 0.9rem;
+    text-decoration: none;
+    border-bottom: 2px solid transparent;
+    transition: border-color 0.2s;
+}
+
+.learn-more-link:hover {
+    border-bottom-color: #ff7f6e;
+}
+
+.comment-count {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    color: #888;
+    font-size: 0.9rem;
+    font-weight: 500;
+}
+
+.comment-icon {
+    width: 16px;
+    height: 16px;
+    fill: #888;
+}
+
+/* Responsive */
+@media (max-width: 1024px) {
+    .news-section {
+        padding: 4rem 2rem;
+    }
+
+    .news-grid {
+        grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    }
+}

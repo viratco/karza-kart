@@ -1,0 +1,18 @@
+.curved-loop-container {
+    width: 100%;
+    overflow: hidden;
+    background-color: #f9f9f9;
+    /* Match page background */
+    padding: 2rem 0;
+    display: flex;
+    justify-content: center;
+}
+
+.curved-text {
+    font-family: 'Inter', sans-serif;
+    font-size: 24px;
+    font-weight: 700;
+    text-transform: uppercase;
+    letter-spacing: 2px;
+    fill: #1a1a1a;
+}
