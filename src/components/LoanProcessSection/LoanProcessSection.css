@@ -79,6 +79,7 @@
     letter-spacing: -0.02em;
     background: none;
     /* Remove gradient */
+    background-clip: border-box;
     -webkit-background-clip: border-box;
     /* Reset clip */
     -webkit-text-fill-color: initial;
@@ -201,5 +202,48 @@
         min-height: 300px;
         order: 2;
         /* Move to bottom on mobile if desired, or keep at top */
+    }
+}
+
+@media (max-width: 768px) {
+    .loan-process-section {
+        padding: 0 1rem;
+    }
+
+    .curved-background-wrapper {
+        padding: 3rem 1.5rem;
+        border-radius: 32px;
+    }
+
+    .process-title {
+        font-size: 2rem;
+    }
+
+    .loan-process-container {
+        gap: 3rem;
+    }
+
+    .process-step {
+        gap: 1rem;
+        padding-bottom: 2rem;
+    }
+
+    .step-number {
+        width: 40px;
+        height: 40px;
+        font-size: 1rem;
+    }
+
+    .process-steps::before {
+        left: 19px;
+        /* Adjust line position for smaller circle */
+    }
+
+    .step-content {
+        padding: 1.25rem;
+    }
+
+    .step-title {
+        font-size: 1.1rem;
     }
 }

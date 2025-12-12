@@ -86,15 +86,21 @@
     align-items: center;
     background-color: #eef2f5;
     /* Light grey/blue background from image */
-    padding: 4rem;
+    padding: 4rem 6rem 4rem 4rem;
+    /* Added extra right padding */
     border-radius: 4px;
     /* Slight rounding if any, image looks mostly square/rect */
+    box-sizing: border-box;
+    /* Ensure padding is included in width */
 }
 
 .about-illustration {
     width: 100%;
-    max-width: 500px;
+    max-width: 450px;
+    /* Slightly reduced max-width to ensure fit */
     height: auto;
+    display: block;
+    /* Remove inline spacing */
 }
 
 @media (max-width: 1024px) {
@@ -124,5 +130,55 @@
         padding: 2rem;
         width: 100%;
         box-sizing: border-box;
+    }
+}
+
+@media (max-width: 768px) {
+    .about-section {
+        padding: 3rem 0;
+        gap: 3rem;
+    }
+
+    .about-top-content {
+        gap: 2rem;
+        padding: 0 1.5rem;
+    }
+
+    .about-title {
+        font-size: 2rem;
+        margin-bottom: 1rem;
+    }
+
+    .about-description {
+        font-size: 1rem;
+        margin-bottom: 2rem;
+    }
+
+    .about-features {
+        gap: 1.5rem;
+    }
+
+    .feature-item {
+        gap: 1rem;
+    }
+
+    .feature-icon-box {
+        min-width: 48px;
+        height: 48px;
+    }
+
+    .about-image-container {
+        padding: 1.5rem;
+        width: 100%;
+        max-width: 100%;
+        /* Ensure it doesn't exceed parent */
+        overflow: hidden;
+        /* Clip any potential overflow */
+    }
+
+    .about-illustration {
+        max-width: 100%;
+        /* Ensure image scales down */
+        height: auto;
     }
 }

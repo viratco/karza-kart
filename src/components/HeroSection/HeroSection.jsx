@@ -1,10 +1,21 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import './HeroSection.css';
 import heroImage from '../../assets/hero-image.png';
 
 const HeroSection = () => {
+    const containerRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: containerRef,
+        offset: ["start start", "end start"]
+    });
+
+    const yImage = useTransform(scrollYProgress, [0, 1], [0, 100]);
+    const yCard = useTransform(scrollYProgress, [0, 1], [0, -50]);
+    const yDots = useTransform(scrollYProgress, [0, 1], [0, -80]);
+
     return (
-        <section className="hero-container">
+        <section className="hero-container" ref={containerRef}>
             {/* Left Content */}
             <div className="hero-content">
                 <h1 className="hero-title">
@@ -31,21 +42,29 @@ const HeroSection = () => {
 
             {/* Right Content */}
             <div className="hero-image-container">
-                <img src={heroImage} alt="Business meeting" className="hero-main-image" />
+                <motion.img
+                    style={{ y: yImage }}
+                    src={heroImage}
+                    alt="Business meeting"
+                    className="hero-main-image"
+                />
 
                 {/* Floating Glass Card */}
-                <div className="floating-card">
+                <motion.div
+                    style={{ y: yCard }}
+                    className="floating-card"
+                >
                     <div className="card-icon">$</div>
                     <div className="card-text">
                         <h4>Refinance</h4>
                         <p>$40400580</p>
                     </div>
-                </div>
+                </motion.div>
 
                 {/* Decorative Dots */}
-                <div className="decorative-dot dot-red"></div>
-                <div className="decorative-dot dot-yellow"></div>
-                <div className="decorative-dot dot-green"></div>
+                <motion.div style={{ y: yDots }} className="decorative-dot dot-red"></motion.div>
+                <motion.div style={{ y: yDots }} className="decorative-dot dot-yellow"></motion.div>
+                <motion.div style={{ y: yDots }} className="decorative-dot dot-green"></motion.div>
             </div>
         </section>
     );

@@ -16,3 +16,14 @@
     letter-spacing: 2px;
     fill: #1a1a1a;
 }
+
+@media (max-width: 768px) {
+    .curved-text {
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+
+    .curved-loop-container {
+        padding: 1.5rem 0;
+    }
+}

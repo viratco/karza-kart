@@ -272,3 +272,29 @@
         transform: scale(0.94);
     }
 }
+
+@media (max-width: 768px) {
+    .bubble-menu-items {
+        padding-top: 80px;
+        /* Reduce top padding for mobile */
+    }
+
+    .bubble-menu-items .pill-link {
+        font-size: 1rem;
+        padding: 0.75rem 1.5rem;
+        min-height: auto;
+        width: auto;
+        display: inline-flex;
+    }
+
+    .bubble-menu-items .pill-list .pill-col {
+        flex: 0 0 auto;
+        /* Allow natural width on mobile too */
+        width: auto;
+    }
+
+    .bubble-menu-items .pill-list {
+        justify-content: center;
+        gap: 10px;
+    }
+}

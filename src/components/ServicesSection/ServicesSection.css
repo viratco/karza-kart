@@ -109,3 +109,30 @@
         gap: 2.5rem;
     }
 }
+
+@media (max-width: 768px) {
+    .services-section {
+        padding: 2rem 1rem;
+    }
+
+    .services-container {
+        padding: 2.5rem 1.5rem;
+        border-radius: 16px;
+    }
+
+    .services-title {
+        font-size: 2rem;
+    }
+
+    .services-description {
+        font-size: 1rem;
+    }
+
+    .services-grid {
+        gap: 2rem;
+    }
+
+    .service-card-title {
+        font-size: 1.25rem;
+    }
+}

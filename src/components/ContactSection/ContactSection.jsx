@@ -1,9 +1,18 @@
-import React from 'react';
+import React, { useRef } from 'react';
+import { motion, useScroll, useTransform } from 'motion/react';
 import './ContactSection.css';
 
 const ContactSection = () => {
+    const sectionRef = useRef(null);
+    const { scrollYProgress } = useScroll({
+        target: sectionRef,
+        offset: ["start end", "end start"]
+    });
+
+    const yForm = useTransform(scrollYProgress, [0, 1], [50, -50]);
+
     return (
-        <section className="contact-section">
+        <section className="contact-section" ref={sectionRef}>
             <div className="contact-container">
                 <div className="contact-header">
                     <h2 className="contact-title">Get in Touch</h2>
@@ -12,7 +21,10 @@ const ContactSection = () => {
                     </p>
                 </div>
 
-                <form className="contact-form">
+                <motion.form
+                    style={{ y: yForm }}
+                    className="contact-form"
+                >
                     <div className="form-row">
                         <div className="form-group">
                             <label htmlFor="firstName" className="form-label">First Name</label>
@@ -37,7 +49,7 @@ const ContactSection = () => {
                     <button type="submit" className="submit-button">
                         <span>Send Message</span>
                     </button>
-                </form>
+                </motion.form>
             </div>
         </section>
     );
